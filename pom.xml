@@ -11,26 +11,26 @@
     <name>jwt-spring-security-demo</name>
     <description>Demo project for JWT with Spring Boot and Spring Security</description>
 
-    <licenses>
-        <license>
-            <name>MIT license</name>
-            <url>https://raw.githubusercontent.com/szerhusenBC/jwt-spring-security-demo/master/LICENSE</url>
-        </license>
-    </licenses>
+    <!--<licenses>-->
+        <!--<license>-->
+            <!--<name>MIT license</name>-->
+            <!--<url>https://raw.githubusercontent.com/szerhusenBC/jwt-spring-security-demo/master/LICENSE</url>-->
+        <!--</license>-->
+    <!--</licenses>-->
 
-    <developers>
-        <developer>
-            <name>Stephan Zerhusen</name>
-            <email>stephan.zerhusen@gmail.com</email>
-        </developer>
-    </developers>
+    <!--<developers>-->
+        <!--<developer>-->
+            <!--<name>Stephan Zerhusen</name>-->
+            <!--<email>stephan.zerhusen@gmail.com</email>-->
+        <!--</developer>-->
+    <!--</developers>-->
 
-    <scm>
-        <connection>scm:git:git://github.com/szerhusenBC/jwt-spring-security-demo.git</connection>
-        <url>https://github.com/szerhusenBC/jwt-spring-security-demo</url>
-        <developerConnection>scm:git:git@github.com/szerhusenBC/jwt-spring-security-demo.git</developerConnection>
-        <tag>HEAD</tag>
-    </scm>
+    <!--<scm>-->
+        <!--<connection>scm:git:git://github.com/szerhusenBC/jwt-spring-security-demo.git</connection>-->
+        <!--<url>https://github.com/szerhusenBC/jwt-spring-security-demo</url>-->
+        <!--<developerConnection>scm:git:git@github.com/szerhusenBC/jwt-spring-security-demo.git</developerConnection>-->
+        <!--<tag>HEAD</tag>-->
+    <!--</scm>-->
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -46,9 +46,9 @@
         <jjwt.version>0.9.1</jjwt.version>
         <jacoco.version>0.8.1</jacoco.version>
 
-        <!--<maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>-->
-        <!--<findbugs-maven-plugin.version>3.0.5</findbugs-maven-plugin.version>-->
-        <!--<findbugs.version>3.0.1</findbugs.version>-->
+        <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
+        <findbugs-maven-plugin.version>3.0.5</findbugs-maven-plugin.version>
+        <findbugs.version>3.0.1</findbugs.version>
         <docker-maven-plugin.version>1.1.1</docker-maven-plugin.version>
     </properties>
 
@@ -83,11 +83,11 @@
             <version>${jjwt.version}</version>
         </dependency>
 
-        <!--<dependency>-->
-            <!--<groupId>com.google.code.findbugs</groupId>-->
-            <!--<artifactId>findbugs</artifactId>-->
-            <!--<version>${findbugs.version}</version>-->
-        <!--</dependency>-->
+        <dependency>
+            <groupId>com.google.code.findbugs</groupId>
+            <artifactId>findbugs</artifactId>
+            <version>${findbugs.version}</version>
+        </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -150,74 +150,74 @@
     </build>
 
     <profiles>
-        <!--<profile>-->
-            <!--<id>findbugs</id>-->
-            <!--<activation>-->
-                <!--<activeByDefault>true</activeByDefault>-->
-            <!--</activation>-->
-            <!--<build>-->
-                <!--<plugins>-->
-                    <!--<plugin>-->
-                        <!--<groupId>org.codehaus.mojo</groupId>-->
-                        <!--<artifactId>findbugs-maven-plugin</artifactId>-->
-                        <!--<version>${findbugs-maven-plugin.version}</version>-->
-                        <!--<configuration>-->
-                            <!--<excludeFilterFile>${basedir}/etc/findbugs-exclude-filter.xml</excludeFilterFile>-->
-                        <!--</configuration>-->
-                        <!--<executions>-->
-                            <!--<execution>-->
-                                <!--<phase>compile</phase>-->
-                                <!--<goals>-->
-                                    <!--<goal>check</goal>-->
-                                <!--</goals>-->
-                            <!--</execution>-->
-                        <!--</executions>-->
-                    <!--</plugin>-->
-                <!--</plugins>-->
-            <!--</build>-->
-        <!--</profile>-->
+        <profile>
+            <id>findbugs</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>findbugs-maven-plugin</artifactId>
+                        <version>${findbugs-maven-plugin.version}</version>
+                        <configuration>
+                            <excludeFilterFile>${basedir}/etc/findbugs-exclude-filter.xml</excludeFilterFile>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <phase>compile</phase>
+                                <goals>
+                                    <goal>check</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
 
-        <!--<profile>-->
-            <!--<id>jacoco</id>-->
-            <!--<build>-->
-                <!--<plugins>-->
-                    <!--<plugin>-->
-                        <!--<groupId>org.jacoco</groupId>-->
-                        <!--<artifactId>jacoco-maven-plugin</artifactId>-->
-                        <!--<version>${jacoco.version}</version>-->
-                        <!--<executions>-->
-                            <!--<execution>-->
-                                <!--<id>prepare-agent</id>-->
-                                <!--<goals>-->
-                                    <!--<goal>prepare-agent</goal>-->
-                                <!--</goals>-->
-                            <!--</execution>-->
-                            <!--<execution>-->
-                                <!--<id>report</id>-->
-                                <!--<phase>prepare-package</phase>-->
-                                <!--<goals>-->
-                                    <!--<goal>report</goal>-->
-                                <!--</goals>-->
-                            <!--</execution>-->
-                            <!--<execution>-->
-                                <!--<id>post-unit-test</id>-->
-                                <!--<phase>test</phase>-->
-                                <!--<goals>-->
-                                    <!--<goal>report</goal>-->
-                                <!--</goals>-->
-                                <!--<configuration>-->
-                                    <!--&lt;!&ndash; Sets the path to the file which contains the execution data. &ndash;&gt;-->
+        <profile>
+            <id>jacoco</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.jacoco</groupId>
+                        <artifactId>jacoco-maven-plugin</artifactId>
+                        <version>${jacoco.version}</version>
+                        <executions>
+                            <execution>
+                                <id>prepare-agent</id>
+                                <goals>
+                                    <goal>prepare-agent</goal>
+                                </goals>
+                            </execution>
+                            <execution>
+                                <id>report</id>
+                                <phase>prepare-package</phase>
+                                <goals>
+                                    <goal>report</goal>
+                                </goals>
+                            </execution>
+                            <execution>
+                                <id>post-unit-test</id>
+                                <phase>test</phase>
+                                <goals>
+                                    <goal>report</goal>
+                                </goals>
+                                <configuration>
+                                    <!-- Sets the path to the file which contains the execution data. -->
 
-                                    <!--<dataFile>target/jacoco.exec</dataFile>-->
-                                    <!--&lt;!&ndash; Sets the output directory for the code coverage report. &ndash;&gt;-->
-                                    <!--<outputDirectory>target/jacoco-ut</outputDirectory>-->
-                                <!--</configuration>-->
-                            <!--</execution>-->
-                        <!--</executions>-->
-                    <!--</plugin>-->
-                <!--</plugins>-->
-            <!--</build>-->
-        <!--</profile>-->
+                                    <dataFile>target/jacoco.exec</dataFile>
+                                    <!-- Sets the output directory for the code coverage report. -->
+                                    <outputDirectory>target/jacoco-ut</outputDirectory>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
     </profiles>
 
 </project>
