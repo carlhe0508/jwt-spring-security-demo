@@ -6,7 +6,7 @@
     <groupId>org.zerhusen</groupId>
     <artifactId>jwt-spring-security-demo</artifactId>
     <version>0.2.0</version>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
 
     <name>jwt-spring-security-demo</name>
     <description>Demo project for JWT with Spring Boot and Spring Security</description>
