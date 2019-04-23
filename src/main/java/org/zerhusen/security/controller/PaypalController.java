@@ -19,15 +19,15 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class PaypalController extends PayPalClient {
-    
+
     //2. Set up your server to receive a call from the client
-    
+
     /**
      * Method to perform sample GET on an order
      *
      * @throws IOException Exceptions from the API, if any
      */
-    @RequestMapping(value = "goPaypal", method = RequestMethod.GET)
+    @RequestMapping(value = "paypal-transaction-complete", method = RequestMethod.GET)
     public void getOrder(String orderId) throws IOException {
         OrdersGetRequest request = new OrdersGetRequest(orderId);
         //3. Call PayPal to get the transaction
@@ -36,7 +36,6 @@ public class PaypalController extends PayPalClient {
         System.out.println("Full response body:");
         System.out.println(new JSONObject(new Json().serialize(response.result())).toString(4));
     }
-    
     /**
      * This is the driver method that invokes the getOrder function with
      * order ID to retrieve order details.
