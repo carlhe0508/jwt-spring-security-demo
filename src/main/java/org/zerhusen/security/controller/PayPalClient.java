@@ -9,8 +9,8 @@ public class PayPalClient {
      *This sample uses SandboxEnvironment. In production, use ProductionEnvironment.
      */
     private PayPalEnvironment environment = new PayPalEnvironment.Sandbox(
-        "carlhe_0508-facilitator@163.com",
-        "12345678");
+        "sb",
+        "");
     
     /**
      *PayPal HTTP client instance with environment that has access
